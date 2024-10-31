@@ -1,6 +1,6 @@
 # Microservice-EmailSender
 to use:
 - minimal api (dotnet)
-- mailkit
-- docker
+- MailKit
+- Docker
 - RabbitMQ
