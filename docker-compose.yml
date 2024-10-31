@@ -1,0 +1,6 @@
+﻿services:
+  emailsender:
+    image: emailsender
+    build:
+      context: .
+      dockerfile: EmailSender/Dockerfile
