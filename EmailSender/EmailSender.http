@@ -1,6 +1,6 @@
 @EmailSender_HostAddress = http://localhost:5014
 
-GET {{EmailSender_HostAddress}}/weatherforecast/
+GET {{EmailSender_HostAddress}}/sendsimplemail/
 Accept: application/json
 
 ###
