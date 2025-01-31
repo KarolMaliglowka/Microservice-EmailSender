@@ -8,6 +8,17 @@ to use:
 
 
 
+
+
+
+
+Examples
+
+<details>
+  <summary>PowerShell</summary>
+
+  Some example
+
 ```powershell
 $url = "http://localhost:5248/sendmail"
 
@@ -23,3 +34,12 @@ $json = @{
 
 Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType application/json
 ```
+
+</details>
+
+<details>
+  <summary>C#</summary>
+
+  adada
+  
+</details>
