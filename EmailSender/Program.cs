@@ -24,13 +24,6 @@ app.MapPost("/sendSimpleMail", () =>
     .WithName("SendSimpleMail")
     .WithOpenApi();
 
-app.MapPost("/sendProMail", () =>
-    {
-
-    })
-    .WithName("SendProMail")
-    .WithOpenApi();
-
 app.MapPost("/sendMail", () =>
     {
 
