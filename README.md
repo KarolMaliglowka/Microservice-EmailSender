@@ -12,13 +12,13 @@ to use:
 $url = "http://localhost:5248/sendmail"
 
 $json = @{
-  from = "william@o2.pl"
-  aliasFrom = "INFORMACJA - wazne powiadomienie"
-  to = @("william@o2.pl")
-  cc = @("karol_maliglowka@o2.pl", "maliglowkakarol@gmail.com")
-  bcc = @("william@tlen.pl")
-  subject = "wiadomo testowa"
-  body = "trec wiadomoci1111"
+  from = "Your_email@xyz.com"
+  aliasFrom = "information come from send"
+  to = @("email1@x.com", "email2@y.com")
+  cc = @("email1@x.com", "email2@y.com")
+  bcc = @("email1@x.com", "email2@y.com")
+  subject = "subject message"
+  body = "body message"
 } | ConvertTo-Json
 
 Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType application/json
