@@ -17,10 +17,11 @@ Examples
 <details>
   <summary>PowerShell</summary>
 
-  Some example
+  This is a example for powershell
 
 ```powershell
 $url = "http://localhost:5248/sendmail"
+$contentType = "application/json"
 
 $json = @{
   from = "Your_email@xyz.com"
@@ -32,7 +33,7 @@ $json = @{
   body = "body message"
 } | ConvertTo-Json
 
-Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType application/json
+Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType $contentType
 ```
 
 </details>
@@ -40,6 +41,6 @@ Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType application/js
 <details>
   <summary>C#</summary>
 
-  adada
-  
+  This is a example for C#
+
 </details>
