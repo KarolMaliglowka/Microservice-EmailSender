@@ -1,11 +1,13 @@
 using EmailSender.Dto;
 using EmailSender.Services;
+using EmailSender.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmailSender, EmailSender.Services.EmailSender>();
+builder.Services.AddSingleton<MessageSender>();
 
 var app = builder.Build();
 
