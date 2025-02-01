@@ -1,6 +1,6 @@
 ﻿namespace EmailSender.Dto;
 
-public class Email
+public class EmailContent
 {
     
 }

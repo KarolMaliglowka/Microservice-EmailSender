@@ -1,5 +1,5 @@
-global using EmailSender.Services;
-
+using EmailSender.Dto;
+using EmailSender.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +17,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("/sendSimpleMail", () =>
+app.MapPost("/sendSimpleMail", (EmailContent emailContent, IEmailSender emailSender) =>
     {
-
+        
     })
     .WithName("SendSimpleMail")
     .WithOpenApi();
