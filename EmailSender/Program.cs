@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<IEmailSender, EmailSender.Services.EmailSender>();
 builder.Services.AddSingleton<MessageSender>();
 
@@ -19,18 +20,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("/sendSimpleMail", (EmailContent emailContent, IEmailSender emailSender) =>
+app.MapPost("/sendMail", (EmailContent emailContent, IEmailSender emailSender) =>
     {
-        
-    })
-    .WithName("SendSimpleMail")
-    .WithOpenApi();
-
-app.MapPost("/sendMail", () =>
-    {
-
+        emailSender.SendMail(emailContent);
     })
     .WithName("SendMail")
+    .WithOpenApi();
+
+app.MapPost("/sendMailPro", () =>
+    {
+
+    })
+    .WithName("SendMailPro")
     .WithOpenApi();
 
 app.Run();
