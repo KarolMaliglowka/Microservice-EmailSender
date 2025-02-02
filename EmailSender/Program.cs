@@ -20,6 +20,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.MapGet("/", () => "it's works!")
+    .WithOpenApi();
+
 app.MapPost("/sendMail", (EmailContent emailContent, IEmailSender emailSender) =>
     {
         emailSender.SendMail(emailContent);
