@@ -1,4 +1,14 @@
 # Microservice-EmailSender
+
+- [About application](#about-application)
+- [Technology](#technology)
+- [Configuration](#configuration)
+- [Examples](#examples)
+
+## About application
+
+
+## Technology
 to use:
 - minimal api (dotnet)
 - MailKit
@@ -6,13 +16,10 @@ to use:
 - RabbitMQ
 
 
+## Configuration
 
 
-
-
-
-
-Examples
+## Examples
 
 <details>
   <summary>PowerShell</summary>
