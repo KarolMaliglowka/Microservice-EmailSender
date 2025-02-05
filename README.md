@@ -13,7 +13,6 @@ to use:
 - minimal api (dotnet)
 - MailKit
 - Docker
-- RabbitMQ
 
 
 ## Configuration
