@@ -30,11 +30,4 @@ app.MapPost("/sendMail", (EmailContent emailContent, IEmailSender emailSender) =
     .WithName("SendMail")
     .WithOpenApi();
 
-app.MapPost("/sendMailPro", () =>
-    {
-
-    })
-    .WithName("SendMailPro")
-    .WithOpenApi();
-
 app.Run();
