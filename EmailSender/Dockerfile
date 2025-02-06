@@ -7,7 +7,7 @@ ENV ASPNETCORE_URLS=http://*:4040
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY . "EmailSender/"
+COPY "EmailSender/EmailSender.csproj" "EmailSender/"
 RUN dotnet restore "EmailSender/EmailSender.csproj"
 COPY . .
 WORKDIR "/src/EmailSender"
