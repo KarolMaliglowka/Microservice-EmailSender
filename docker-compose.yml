@@ -1,6 +1,10 @@
-﻿services:
+services:
   emailsender:
-    image: emailsender
+    image: emailsender:v4
+    container_name: mail-sender
     build:
       context: .
       dockerfile: EmailSender/Dockerfile
+    ports:
+      - "4040:4040"
+
