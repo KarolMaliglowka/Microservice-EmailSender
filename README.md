@@ -1,21 +1,16 @@
+![](image.jpg)
+
 # Microservice-EmailSender
 
-- [About application](#about-application)
-- [Technology](#technology)
-- [Configuration](#configuration)
-- [Examples](#examples)
-
-## About application
-
-
-## Technology
-to use:
-- minimal api (dotnet)
-- MailKit
-- Docker
+### API for sending email messages
 
 
 ## Configuration
+
+
+
+## How to work with the application
+
 
 
 ## Examples
