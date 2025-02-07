@@ -1,4 +1,4 @@
-![](image.jpg)
+![](./image.jpg)
 
 # Microservice-EmailSender
 
