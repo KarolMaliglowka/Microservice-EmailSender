@@ -1,9 +1,16 @@
 services:
   application:
     image: emailsender
+    tty: true
     container_name: mail-sender-container
     build:
       context: .
       dockerfile: EmailSender/Dockerfile
     ports:
       - "4040:4040"
+    environment:
+      - SMTPHOST=<smtp_host>
+      - SMTPPORT=<port>
+      - USESSL=<bool_value>
+      - EMAILADDRESS=<email_address>
+      - PASSWORD=<password>
