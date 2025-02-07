@@ -1,5 +1,4 @@
-![](./image.JPG)
-![image](./image.jpg)
+![API mail sender](readme-image.jpg)
 
 # Microservice-EmailSender
 
