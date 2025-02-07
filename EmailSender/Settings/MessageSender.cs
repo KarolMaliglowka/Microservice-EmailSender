@@ -10,6 +10,18 @@ public class MessageSender(IConfiguration configuration)
         var smtpSettings = new SmtpSettings();
         configuration.GetSection(SmtpSettings.Smtp).Bind(smtpSettings);
 
+        if (string.IsNullOrWhiteSpace(smtpSettings.SmtpHost) || 
+            smtpSettings.SmtpPort == 0 ||
+            string.IsNullOrWhiteSpace(smtpSettings.EmailAddress) ||
+            string.IsNullOrWhiteSpace(smtpSettings.Password))
+        {
+            smtpSettings.SmtpHost = Environment.GetEnvironmentVariable("SMTPHOST");
+            smtpSettings.SmtpPort = Convert.ToInt32(Environment.GetEnvironmentVariable("SMTPPORT"));
+            smtpSettings.UseSsl = Convert.ToBoolean(Environment.GetEnvironmentVariable("USESSL"));
+            smtpSettings.EmailAddress = Environment.GetEnvironmentVariable("EMAILADDRESS");
+            smtpSettings.Password = Environment.GetEnvironmentVariable("PASSWORD");
+        }
+
         try
         {
             using var client = new SmtpClient();

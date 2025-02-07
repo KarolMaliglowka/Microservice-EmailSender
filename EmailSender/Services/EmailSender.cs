@@ -16,6 +16,11 @@ public class EmailSender(MessageSender messageSender, IConfiguration configurati
         configuration.GetSection(SmtpSettings.Smtp).Bind(smtpSettings);
         
         var message = new MimeMessage();
+        if (string.IsNullOrWhiteSpace(smtpSettings.EmailAddress))
+        {
+            smtpSettings.EmailAddress = Environment.GetEnvironmentVariable("EMAILADDRESS");
+        }
+
         message.From.Add(new MailboxAddress(mailContent.Name, smtpSettings.EmailAddress));
 
         if (mailContent.To != null)
