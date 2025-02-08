@@ -18,7 +18,7 @@
 <details>
   <summary>PowerShell</summary>
 
-  This is a example for powershell with minimal context:
+  This is a example for powershell:
 
 ```powershell
 $url = "http://host:4040/sendmail"
@@ -30,6 +30,7 @@ $json = @{
   cc = @("email1@x.com", "email2@y.com")
   bcc = @("email1@x.com", "email2@y.com")
   subject = "subject message"
+  bodyishtml = $False
   body = "body message"
 } | ConvertTo-Json
 
@@ -41,7 +42,7 @@ Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType $contentType
 <details>
   <summary>C#</summary>
 
-  This is a example for C# with minimal context:
+  This is a example for C#:
 
 ```cs
 using System.Text;
@@ -62,6 +63,7 @@ public class Program
             Cc = new List<string>(),
             Bcc = new List<string>(),
             Subject = "subject message",
+            BodyIsHtml = false,
             Body = "body message"
         };
 
@@ -77,7 +79,7 @@ public class Program
 <details>
   <summary>Python</summary>
   
-  This is a example for Python with minimal context:
+  This is a example for Python:
 
 ```python
 import requests
@@ -89,6 +91,7 @@ data = {
   "cc": ["email1@x.com", "email2@y.com"],
   "bcc": ["email1@x.com", "email2@y.com"],
   "subject": "subject message",
+  "bodyishtml": False,
   "body": "body message"
 }
 headers = {'Content-type': 'application/json'}
