@@ -1,19 +1,56 @@
 ![API mail sender](readme-image.jpg)
 
-# Microservice-EmailSender
+## Microservice-EmailSender
 
-### API for sending email messages
-
-
-## Configuration
+#### API for sending email messages
 
 
+### Configuration
 
-## How to work with the application
+You need to configure either the `appsettings.json` file
+
+```json
+"Smtp": {
+    "SmtpHost": "",
+    "SmtpPort": 0,
+    "UseSsl": true,
+    "EmailAddress": "",
+    "Password": ""
+  }
+```
+
+or the `docker-composer.yaml` file
+
+```yaml
+environment:
+  - SMTPHOST=<smtp_host>
+  - SMTPPORT=<port>
+  - USESSL=<bool_value>
+  - EMAILADDRESS=<email_address>
+  - PASSWORD=<password>
+```
+`SMTPHOST - server smtp`
+
+`SMTPPORT - smtp server port`
+
+`USESSL - is ssl is used`
+
+`EMAILADDRESS - your email address`
+
+`PASSWORD - password to addres`
+
+### How to work with the application
+
+To run the application, we need to have [Docker](https://docs.docker.com/get-started/get-docker/) or [ASP.NET Core Runtime 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed.
+
+If we plan to run the application as a container from an image in the dock, we use scripts:
+
+`build-docker.ps1` for windows
+
+`build-docker.sh` for linux
 
 
-
-## Examples
+### Examples
 
 <details>
   <summary>PowerShell</summary>

@@ -3,9 +3,9 @@ using EmailSender.Services;
 
 namespace EmailSender.Endpoints;
 
-public static class Mail
+public static class MailEndpoints
 {
-    public static void MailEndpoints(this WebApplication app)
+    public static void MapMailEndpoints(this WebApplication app)
     {
         app.MapPost("/sendMail", (EmailContent emailContent, IEmailSender emailSender) => {
                 emailSender.SendMail(emailContent);

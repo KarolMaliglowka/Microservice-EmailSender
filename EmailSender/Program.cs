@@ -20,7 +20,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.InfoEndpoints();
-app.MailEndpoints();
+app.MapInfoEndpoints();
+app.MapMailEndpoints();
 
 app.Run();
