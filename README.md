@@ -18,7 +18,7 @@
 <details>
   <summary>PowerShell</summary>
 
-  This is a example for powershell
+  This is a example for powershell with minimal context:
 
 ```powershell
 $url = "http://host:4040/sendmail"
@@ -41,14 +41,43 @@ Invoke-RestMethod -Uri $url -Method Post -Body $json -ContentType $contentType
 <details>
   <summary>C#</summary>
 
-  This is a example for C#
+  This is a example for C# with minimal context:
+
+```cs
+using System.Text;
+using System.Text.Json;
+
+public class Program
+{
+    public static async Task Main()
+    {
+        var url = "http://host:4040/sendmail";
+        var contentType = "application/json";
+
+        using var client = new HttpClient();
+        var values = new
+        {
+            Name = "information come from send",
+            To = new List<string>(){ "email1@x.com", "email2@y.com" },
+            Cc = new List<string>(),
+            Bcc = new List<string>(),
+            Subject = "subject message",
+            Body = "body message"
+        };
+
+        var jsonString = JsonSerializer.Serialize(values);
+        var stringContent = new StringContent(jsonString, Encoding.UTF8, contentType);
+        await client.PostAsync(url, stringContent);
+    }
+}
+```
 
 </details>
 
 <details>
   <summary>Python</summary>
   
-  This is a example for Python
+  This is a example for Python with minimal context:
 
 ```python
 import requests
