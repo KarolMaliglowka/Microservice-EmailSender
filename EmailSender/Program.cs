@@ -1,4 +1,4 @@
-using EmailSender.Dto;
+using EmailSender.Endpoints;
 using EmailSender.Services;
 using EmailSender.Settings;
 
@@ -20,14 +20,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => "it's works!")
-    .WithOpenApi();
-
-app.MapPost("/sendMail", (EmailContent emailContent, IEmailSender emailSender) =>
-    {
-        emailSender.SendMail(emailContent);
-    })
-    .WithName("SendMail")
-    .WithOpenApi();
+app.InfoEndpoints();
+app.MailEndpoints();
 
 app.Run();
