@@ -41,7 +41,7 @@ environment:
 
 ### How to work with the application
 
-To run the application, we need to have [Docker](https://docs.docker.com/get-started/get-docker/) or [ASP.NET Core Runtime 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed.
+To run the application, we need to have [Docker](https://docs.docker.com/get-started/get-docker/) or [ASP.NET Core Runtime 9.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) installed.
 
 If we plan to run the application as a container from an image in the dock, we use scripts:
 
