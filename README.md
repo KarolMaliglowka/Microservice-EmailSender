@@ -1,4 +1,4 @@
-![API mail sender](readme-image.jpg)
+![API mail sender](accessories/readme-image.jpg)
 
 ## Microservice-EmailSender
 

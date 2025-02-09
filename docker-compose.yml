@@ -5,7 +5,7 @@ services:
     container_name: mail-sender-container
     build:
       context: .
-      dockerfile: EmailSender/Dockerfile
+      dockerfile: src/EmailSender/Dockerfile
     ports:
       - "4040:4040"
     environment:

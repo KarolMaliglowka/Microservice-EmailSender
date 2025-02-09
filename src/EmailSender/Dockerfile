@@ -1,16 +1,16 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 USER $APP_UID
 WORKDIR /app
 EXPOSE 4040
 ENV ASPNETCORE_URLS=http://*:4040
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY "EmailSender/EmailSender.csproj" "EmailSender/"
-RUN dotnet restore "EmailSender/EmailSender.csproj"
+COPY ["src/EmailSender/EmailSender.csproj", "src/EmailSender/"]
+RUN dotnet restore "src/EmailSender/EmailSender.csproj"
 COPY . .
-WORKDIR "/src/EmailSender"
+WORKDIR "/src/src/EmailSender"
 RUN dotnet build "EmailSender.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
