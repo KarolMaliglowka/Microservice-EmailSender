@@ -1,7 +1,5 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
-using Serilog.Data;
-using ILogger = Serilog.ILogger;
 
 namespace EmailSender.Settings;
 
@@ -35,7 +33,7 @@ public class MessageSender(IConfiguration configuration, ILogger<MessageSender> 
         catch (Exception e)
         {
             logger.LogError(e, "Error while connecting to smtp");
-            throw;
+            throw new Exception("Error while connecting to smtp", e);
         }
     }
 }
