@@ -1,7 +1,6 @@
 ﻿using EmailSender.Dto;
 using EmailSender.Settings;
 using MimeKit;
-using ILogger = Serilog.ILogger;
 
 namespace EmailSender.Services;
 
@@ -63,7 +62,7 @@ public class EmailSender(MessageSender messageSender, IConfiguration configurati
         catch (Exception e)
         {
             logger.LogError(e, "Error while sending email.");
-            throw;
+            throw new Exception("Error while sending email.", e);
         }
     }
 }
