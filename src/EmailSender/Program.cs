@@ -11,16 +11,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmailSender, EmailSender.Services.EmailSender>();
 builder.Services.AddSingleton<MessageSender>();
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
-    .CreateLogger();
-
-Log.Information("Starting up application");
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
 
 try
 {
     var app = builder.Build();
-
+    app.UseSerilogRequestLogging();
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();

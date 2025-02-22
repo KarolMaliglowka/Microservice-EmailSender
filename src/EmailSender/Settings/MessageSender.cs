@@ -3,7 +3,7 @@ using MimeKit;
 
 namespace EmailSender.Settings;
 
-public class MessageSender(IConfiguration configuration)
+public class MessageSender(IConfiguration configuration, ILogger<MessageSender> logger)
 {
     public async Task MailSender(MimeMessage message)
     {
@@ -32,8 +32,8 @@ public class MessageSender(IConfiguration configuration)
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            logger.LogError(e, "Error while connecting to smtp");
+            throw new Exception("Error while connecting to smtp", e);
         }
     }
 }
