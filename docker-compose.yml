@@ -1,6 +1,7 @@
 services:
   application:
     image: emailsender
+    restart: unless-stopped
     tty: true
     container_name: mail-sender-container
     build:
@@ -14,3 +15,5 @@ services:
       - USESSL=<bool_value>
       - EMAILADDRESS=<email_address>
       - PASSWORD=<password>
+    volumes:
+      - /c/temp:/app/logs/
