@@ -15,5 +15,3 @@ services:
       - USESSL=<bool_value>
       - EMAILADDRESS=<email_address>
       - PASSWORD=<password>
-    volumes:
-      - /c/temp:/app/logs/
